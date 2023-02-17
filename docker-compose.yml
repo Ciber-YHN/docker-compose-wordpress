@@ -5,6 +5,7 @@ services:
   db:
     image: mysql:latest
     volumes:
+      - ./git-clone/BBDD-client.dump:/docker-entrypoint-initdb.d/wordpress.sql
       - db_data:/var/lib/mysql
     restart: always
     environment:
